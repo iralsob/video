@@ -96,33 +96,54 @@ header
 
     background: url(../img/player-content.png);
     background-size: cover;
-    &-header {
+    &-header
+    {
+        position: absolute;
+        z-index: 9;
+        right: 0;
+        left: 0;
+
         padding: 10px;
-            position: absolute;
-    z-index: 9;
-    left: 0;
-    right: 0;
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0.3+100 */
-background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.3) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,0.3))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0.3) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0.3) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0.3) 100%); /* IE10+ */
-background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0.3) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#4d000000',GradientType=0 ); /* IE6-9 */
-        &_time {
-            background: url(../img/time.png) no-repeat;
-            display: inline-block;
-            width: 47px;
-            height: 47px;
-                float: right;
+
+        background:    -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
+        background:      -o-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,.3) 100%); /* Opera 11.10+ */
+        background:     -ms-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
+        background:         linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,.3) 100%); /* W3C */
+        &_title
+        {
+            font-size: 30px;
+            line-height: 64px;
+
+            margin-left: 20px;
         }
-        &_share {
-            background: url(../img/share.png) no-repeat;
+        &_time
+        {
             display: inline-block;
+            float: right;
+
             width: 47px;
             height: 47px;
-                float: right;
+            margin: 10px;
+
+            cursor: pointer;
+
+            background: url(../img/time.png) no-repeat;
+        }
+        &_share
+        {
+            display: inline-block;
+            float: right;
+
+            width: 47px;
+            height: 47px;
+            margin: 10px;
+
+            cursor: pointer;
+
+            background: url(../img/share.png) no-repeat;
         }
     }
     &-content
@@ -135,15 +156,86 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 
         display: flex;
 
-        margin-bottom: 100px;
-
         background: rgba(0,0,0,.6);
         &_wrap
         {
             margin: auto;
+
+            text-align: center;
+        }
+        &_on
+        {
+            font-size: 60px;
+
+            position: relative;
+
+            padding: 40px 120px 40px 50px;
+
+            cursor: pointer;
+
+            border-radius: 30px;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,000000+51,000000+100&0+0,0+51,0.4+100 */
+            background:    -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(0,0,0,0) 51%, rgba(0,0,0,.4) 100%), #ff002a; /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,0)), color-stop(51%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,.4))), #ff002a; /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(0,0,0,0) 51%,rgba(0,0,0,.4) 100%), #ff002a; /* Chrome10+,Safari5.1+ */
+            background:      -o-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(0,0,0,0) 51%,rgba(0,0,0,.4) 100%), #ff002a; /* Opera 11.10+ */
+            background:     -ms-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(0,0,0,0) 51%,rgba(0,0,0,.4) 100%), #ff002a; /* IE10+ */
+            background:         linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(0,0,0,0) 51%,rgba(0,0,0,.4) 100%), #ff002a; /* W3C */
+            &:after
+            {
+                position: absolute;
+                top: 25px;
+                right: 25px;
+
+                display: inline-block;
+
+                width: 84px;
+                height: 94px;
+
+                content: '';
+
+                background-image: url(../img/play-big.png);
+                background-repeat: no-repeat;
+            }
+            &.disabled
+            {
+                cursor: default;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,000000+51,000000+100&0+0,0+51,0.4+100 */
+
+                background:    -moz-linear-gradient(top, rgba(30,87,153,0) 0%, rgba(0,0,0,0) 51%, rgba(0,0,0,.4) 100%), #666; /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,0)), color-stop(51%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,.4))), #666; /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(0,0,0,0) 51%,rgba(0,0,0,.4) 100%), #666; /* Chrome10+,Safari5.1+ */
+                background:      -o-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(0,0,0,0) 51%,rgba(0,0,0,.4) 100%), #666; /* Opera 11.10+ */
+                background:     -ms-linear-gradient(top, rgba(30,87,153,0) 0%,rgba(0,0,0,0) 51%,rgba(0,0,0,.4) 100%), #666; /* IE10+ */
+                background:         linear-gradient(to bottom, rgba(30,87,153,0) 0%,rgba(0,0,0,0) 51%,rgba(0,0,0,.4) 100%), #666; /* W3C */
+            }
+        }
+        &_views
+        {
+            font-size: 24px;
+
+            margin: 20px 0 40px;
+
+            text-align: center;
+
+            color: #bababa;
+        }
+        &_off
+        {
+            font-size: 28px;
+            font-weight: 300;
+
+            display: inline-block;
+
+            padding: 7px 15px;
+
+            cursor: pointer;
+
+            border: 2px solid rgba(255,255,255,.5);
+            border-radius: 5px;
+            background: rgba(0,0,0,.5);
         }
     }
-
     &-control
     {
         position: absolute;
@@ -151,7 +243,82 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
         bottom: 110px;
         left: 0;
 
+        padding-bottom: 20px;
+
         background-color: #000;
+        &_progress
+        {
+            position: relative;
+
+            display: inline-block;
+
+            width: 99%;
+            height: 5px;
+            margin: 0 .5%;
+            margin-bottom: 20px;
+
+            border-radius: 2px;
+            background: #626262;
+            &:before
+            {
+                position: absolute;
+
+                display: inline-block;
+
+                width: 25%;
+                height: 5px;
+
+                content: '';
+
+                border-radius: 2px;
+                background: #e60820;
+            }
+        }
+        &_on
+        {
+            display: inline-block;
+
+            width: 40px;
+            height: 43px;
+            margin: 0 20px;
+
+            background: url(../img/play.png) no-repeat;
+        }
+        &_volume
+        {
+            display: inline-block;
+
+            width: 44px;
+            height: 44px;
+            margin: 0 20px;
+
+            background: url(../img/volume.png) no-repeat;
+        }
+        &_time
+        {
+            font-size: 24px;
+
+            display: inline-block;
+
+            vertical-align: super;
+
+            color: #bababa;
+            &__active
+            {
+                color: #fff;
+            }
+        }
+        &_fullscreen
+        {
+            display: inline-block;
+            float: right;
+
+            width: 55px;
+            height: 44px;
+            margin-right: 20px;
+
+            background: url(../img/fullscreen.png) no-repeat;
+        }
     }
 }
 footer
