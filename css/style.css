@@ -132,6 +132,8 @@ header .ageLimit {
 .player-content_wrap {
   margin: auto;
   text-align: center;
+  position: relative;
+  width: 100%;
 }
 .player-content_on {
   font-size: 60px;
