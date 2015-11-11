@@ -138,6 +138,7 @@ header .ageLimit {
 .player-content_on {
   font-size: 60px;
   position: relative;
+  display: inline-block;
   padding: 40px 120px 40px 50px;
   cursor: pointer;
   border-radius: 30px;
