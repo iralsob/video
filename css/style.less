@@ -92,6 +92,9 @@ header
     min-width: 320px;
     max-width: 640px;
     min-height: 480px;
+    max-height: 1280px;
+    height: auto;
+    width: auto;
     margin: 0 auto;
 
     background: url(../img/player-content.jpg);
@@ -239,13 +242,11 @@ header
     }
     &-control
     {
-        position: absolute;
-        right: 0;
-        bottom: 110px;
-        left: 0;
-
+        min-width: 320px;
+        max-width: 640px;
+        width: auto;
+        margin: 0 auto;
         padding-bottom: 20px;
-
         background-color: #000;
         &_progress
         {
@@ -324,9 +325,10 @@ header
 }
 footer
 {
-    font-size: 24px;
+    font-size: 150%;
 
     padding: 10px;
+    margin-top: 20px;
 
     color: #a1a4a4;
     background: #322f2f;
